@@ -1,0 +1,11 @@
+Proposed Tests / Requirements:
+ - No more Write-Warning / Write-Host / Write-Verbose (Regular Test)
+ - No more break & Continue outside of a loop (Regular Test, Can be overridden, using an override tag)
+ - Manual sign off on code style (Tag)
+ - Manual sign off on messaging usage (Tag)
+ - Manual sign off on flow control (Tag)
+ - Manual sign off on pipeline implementation (Tag)
+ - Everything with *-Dba* Prefixes (Regular Test)
+ - Every public function has the $Silent switch-parameter (Regular Test)
+ - _Every_ function, including internal functions require full CBH (Regular Test)
+ - Every public function has approved tagging for search. Define the tags and list them in a csv table, then do a regular test against them. 
