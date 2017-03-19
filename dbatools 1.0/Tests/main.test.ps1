@@ -36,7 +36,7 @@ Remove-Module -Name dbatools -ErrorAction Ignore
 Import-Module "$($root.FullName)\dbatools.psm1"
 
 $functions_public = Get-ChildItem -Path "$($root.FullName)\functions" -Filter "*.ps1"
-$functions_internal = Get-ChildItem -Path "$($root.FullName)\internal" -Filter "*.ps1" -Exclude DynamicParams.ps1
+$functions_internal = Get-ChildItem -Path "$($root.FullName)\internal\" -Filter "*.ps1" | Where-Object Name -ne DynamicParams.ps1
 
 # Add Utilities
 . "$PSScriptRoot\Get-FunctionValidationTags.ps1"

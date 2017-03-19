@@ -1,4 +1,3 @@
-#TYPE Selected.System.Management.Automation.PSCustomObject
 "Name","Syntax","Pipeline","CodeStyle","FlowControl","Messaging","FunctionName","SilentParameter","BreakContinue","DeprecatedVerbostyCommands"
 "Copy-SqlServerAgent","True","False","False","False","False","False","True","False",
 "Get-DbaDiskSpace","True","False","False","False","False","True","True","False",
@@ -36,6 +35,7 @@
 "Find-SqlUnusedIndex","True","False","False","False","False","False","True","False",
 "Get-SqlServerKey","True","False","False","False","False","False","True","False",
 "Stop-DbaProcess","True","False","False","False","False","True","True","False",
+"Get-DbaSqlBuildReference","True","False","False","False","False","True","True","False",
 "Export-SqlLogin","True","False","False","False","False","False","True","False",
 "Test-DbaPowerPlan","True","False","False","False","False","True","True","False",
 "Get-DbaDatabase","True","False","False","False","False","True","True","False",
@@ -128,6 +128,7 @@
 "Find-DbaUserObject","True","False","False","False","False","True","True","False",
 "Find-DbaDatabase","True","False","False","False","False","True","True","False",
 "Remove-DbaDatabase","True","False","False","False","False","True","True","False",
+"Test-DbaLinkedServerConnection","True","False","False","False","False","True","True","False",
 "Test-SqlTempDbConfiguration","True","False","False","False","False","False","True","False",
 "Set-DbaConfig","True","False","False","False","False","True","True","False",
 "Export-DbaExecutionPlan","True","False","False","False","False","True","True","False",
@@ -137,6 +138,7 @@
 "Get-DbaUptime","True","False","False","False","False","True","True","False",
 "Remove-DbaBackup","True","False","False","False","False","True","True","False",
 "Get-DbaDetachedDatabaseInfo","True","False","False","False","False","True","True","False",
+"Get-DbaTable","True","False","False","False","False","True","True","False",
 "Test-DbaDiskAllocation","True","False","False","False","False","True","True","False",
 "Get-DbaNetworkActivity","True","False","False","False","False","True","True","False",
 "Install-SqlWhoIsActive","True","False","False","False","False","False","True","False",
