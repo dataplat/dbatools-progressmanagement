@@ -29,9 +29,9 @@ See the Style guide for what style requirements dbatools has for its functions.
 Tag: Messaging
 
 Functions must use the internal messaging system, in order to properly support debugging and logging, as well as responding to verbosity configurations.
-See the Messaging guide for what needs to be considered for the messaging system.
+See the Messaging guide for what needs to be considered for the messaging system:
 
-Tier 1 implementation is required for the 1.0 release.
+https://github.com/sqlcollaborative/dbatools/wiki/Implementing-the-messaging-system
 
 ## Flow Control
 Tag: FlowControl
