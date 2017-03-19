@@ -14,7 +14,7 @@
     
     It -name "Should not contain continue/break" -test {
         $test = $null
-        $test = $Tokens | Where-Object -Property Text -Match '^continue$|^break$'
+        $test = $Tokens | Where-Object -Property kind -Match '^continue$|^break$'
         Should -ActualValue $test -BeNullOrEmpty
     }
     
