@@ -49,7 +49,7 @@ $functions_internal = Get-ChildItem -Path "$($root.FullName)\internal\" -Filter 
 . "$PSScriptRoot\Test-FlowControl.ps1"
 . "$PSScriptRoot\Test-FunctionName.ps1"
 . "$PSScriptRoot\Test-MessagingUsage.ps1"
-. "$PSScriptRoot\Test-ParamSilentExists.ps1"
+. "$PSScriptRoot\Test-ParamEnableExceptionExists.ps1"
 . "$PSScriptRoot\Test-PipelineImplementation.ps1"
 . "$PSScriptRoot\Test-SyntaxError.ps1"
 #endregion Preparing the playing field
@@ -61,7 +61,9 @@ $global:BadFunctions = @()
 $ContinueBreakExceptions = Get-Content "$PSScriptRoot\ContinueBreakExceptions.txt"
 
 Describe "Testing dbatools in its entirety on its path to Release 1.0" {
+
 }
+
 
 #region Process public functions
 Describe "Testing Public functions" {
@@ -83,7 +85,7 @@ Describe "Testing Public functions" {
             Test-SyntaxError -Errors $Errors
             Test-DeprecatedVerbosityCommands -File $file
             Test-FunctionName -Ast $ast
-            Test-ParamSilentExists -Ast $ast
+            Test-ParamEnableExceptionExists -Ast $ast
             Test-EvilBreakContinue -Tokens $Tokens -Exceptions $ContinueBreakExceptions -Ast $ast
             
             # Tag based tests
@@ -140,8 +142,8 @@ Writing results to file in the current directory.
 The following functions had some odd issue and are not on the list, though they too experienced a Pester test:
 $($BadFunctions -join "`n")
 "@
-$global:results_internal.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, BreakContinue, DeprecatedVerbostyCommands | Export-Csv -Path "internal.csv" -NoTypeInformation
-$global:results_internal.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, BreakContinue, DeprecatedVerbostyCommands | ConvertTo-Html | Set-Content -Path "internal.html" -Encoding UTF8
-$global:results_public.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, FlowControl, Messaging, FunctionName, SilentParameter, BreakContinue, DeprecatedVerbostyCommands | Export-Csv -Path "public.csv" -NoTypeInformation
-$global:results_public.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, FlowControl, Messaging, FunctionName, SilentParameter, BreakContinue, DeprecatedVerbostyCommands | ConvertTo-Html | Set-Content -Path "public.html" -Encoding UTF8
+$global:results_internal.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, BreakContinue, DeprecatedVerbosityCommands | Export-Csv -Path "internal.csv" -NoTypeInformation
+$global:results_internal.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, BreakContinue, DeprecatedVerbosityCommands | ConvertTo-Html | Set-Content -Path "internal.html" -Encoding UTF8
+$global:results_public.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, FlowControl, Messaging, FunctionName, EnableException, BreakContinue, DeprecatedVerbosityCommands | Export-Csv -Path "public.csv" -NoTypeInformation
+$global:results_public.Values | Select-Object Name, Syntax, Pipeline, CodeStyle, FlowControl, Messaging, FunctionName, EnableException, BreakContinue, DeprecatedVerbosityCommands | ConvertTo-Html | Set-Content -Path "public.html" -Encoding UTF8
 #endregion Generate Output files

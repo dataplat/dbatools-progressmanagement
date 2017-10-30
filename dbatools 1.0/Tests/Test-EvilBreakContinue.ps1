@@ -16,7 +16,8 @@
         $test = $null
         $test = $Tokens | Where-Object -Property kind -Match '^continue$|^break$'
         Should -ActualValue $test -BeNullOrEmpty
+        Write-TestResult -Name "BreakContinue" -Result ($null -eq $test)
     }
     
-    Write-TestResult -Name "BreakContinue" -Result ($null -eq $test)
+    
 }
