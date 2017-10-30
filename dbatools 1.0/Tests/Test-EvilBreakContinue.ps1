@@ -15,8 +15,9 @@
     It -name "Should not contain continue/break" -test {
         $test = $null
         $test = $Tokens | Where-Object -Property kind -Match '^continue$|^break$'
+        Write-TestResult -Name "BreakContinue" -Result ($null -eq $test)
         Should -ActualValue $test -BeNullOrEmpty
     }
     
-    Write-TestResult -Name "BreakContinue" -Result ($null -eq $test)
+    
 }
